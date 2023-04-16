@@ -23,11 +23,9 @@ namespace Northwind_WEBAPI.Controllers
 
         [HttpGet]
         [Route("CustomerOrders")]
-        public IActionResult CustomerOrders(string Id)
+        public IActionResult CustomerOrders(string id)
         {
-            var customerOders = _db.Orders.Where(x => x.CustomerId == Id).ToList();
-
-
+            var customerOders = _db.Orders.Where(x => x.CustomerId == id).ToList();
             return Ok(customerOders);
         }
 
